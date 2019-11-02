@@ -14,8 +14,8 @@ public class CRC32 implements Checksum {
         if (off < 0 || len < 0 || off > b.length - len) {
             throw new ArrayIndexOutOfBoundsException();
         }
-            crc  = 0xFFFFFFFF;       // initial contents of LFBSR
-        int poly = 0xEDB88320;   // reverse polynomial
+            crc  = 0xFFFFFFFF;
+        int poly = 0xEDB88320;
 
         for (byte a : b) {
             int temp = (crc ^ a) & 0xff;
@@ -30,16 +30,10 @@ public class CRC32 implements Checksum {
         crc = crc ^ 0xffffffff;
     }
 
-
-
-
-    @Override
     public void reset() {
         crc = 0;
     }
 
-
-    @Override
     public long getValue() {
         return (long)crc & 0xffffffffL;
     }

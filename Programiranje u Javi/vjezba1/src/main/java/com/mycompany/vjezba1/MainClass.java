@@ -3,7 +3,7 @@ package com.mycompany.vjezba1;
 public class MainClass {
     public static void main(String[] args) {
 
-        String str = "Generate CRC32 Checksum For Byte Array Examplee";
+        String str = "Generate CRC32 Checksum For Byte Array Example";
         byte bytes[] = str.getBytes();
         Checksum checksum = new CRC32();
 
