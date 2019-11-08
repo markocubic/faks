@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.vjezba2;
 
 import static org.testng.Assert.*;
@@ -11,16 +6,14 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import java.util.zip.CRC32;
-import java.util.zip.Checksum;
 
 /**
  *
  * @author Marko Ćubić
  */
-public class myCRC32NGTest {
+public class CRC32NGTest {
     
-    public myCRC32NGTest() {
+    public CRC32NGTest() {
     }
 
     @BeforeClass
@@ -46,10 +39,10 @@ public class myCRC32NGTest {
     public void testUpdate_int() {
         System.out.println("update");
         int b = 0;
-        myCRC32 instance = new myCRC32();
+        CRC32 instance = new CRC32();
         instance.update(b);
    
-        CRC32 org = new CRC32();
+        java.util.zip.CRC32 org = new java.util.zip.CRC32();
         org.update(b);
         
         assertEquals(instance.getValue(), org.getValue());
@@ -64,12 +57,12 @@ public class myCRC32NGTest {
         String str = "Generate CRC32 Checksum For Byte Array Example";
         byte bytes[] = str.getBytes();
         
-        myChecksum checksum = new myCRC32();
-        myCRC32 instance = new myCRC32();
+        Checksum checksum = new CRC32();
+        CRC32 instance = new CRC32();
         instance.update(bytes, 0, bytes.length);
         
-        Checksum checksum2 = new CRC32();
-        CRC32 org = new CRC32();
+        java.util.zip.Checksum checksum2 = new java.util.zip.CRC32();
+        java.util.zip.CRC32 org = new java.util.zip.CRC32();
         org.update(bytes, 0, bytes.length);
         
         assertEquals(instance.getValue(), org.getValue());
@@ -83,10 +76,10 @@ public class myCRC32NGTest {
         System.out.println("update");
         String str = "Generate CRC32 Checksum For Byte Array Example";
         byte b[] = str.getBytes();
-        myCRC32 instance = new myCRC32();
+        CRC32 instance = new CRC32();
         instance.update(b);
         
-        CRC32 org = new CRC32();
+        java.util.zip.CRC32 org = new java.util.zip.CRC32();
         org.update(b);
     }
 
@@ -96,10 +89,10 @@ public class myCRC32NGTest {
     @Test
     public void testReset() {
         System.out.println("reset");
-        myCRC32 instance = new myCRC32();
+        CRC32 instance = new CRC32();
         instance.reset();
         
-        CRC32 org = new CRC32();
+        java.util.zip.CRC32 org = new java.util.zip.CRC32();
         org.reset();
         
         assertEquals(instance.getValue(), org.getValue());
@@ -111,11 +104,10 @@ public class myCRC32NGTest {
     @Test
     public void testGetValue() {
         System.out.println("getValue");
-        myCRC32 instance = new myCRC32();
+        CRC32 instance = new CRC32();
         long expResult = 0L;
         long result = instance.getValue();
         
         assertEquals(result, expResult);
     }
-    
 }
