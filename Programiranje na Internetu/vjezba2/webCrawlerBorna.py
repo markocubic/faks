@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re
 import time
-import urllib2
+import urllib.request as urllib
 import sys
 
 visited_urls = []
@@ -22,7 +22,7 @@ def crawl(url):
 
     for page_url in page_urls:        
         crawl(page_url)
-     
+    
 def get_page_html(url):
     hdrs = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -31,9 +31,9 @@ def get_page_html(url):
        'Accept-Language': 'en-US,en;q=0.8',
        'Connection': 'keep-alive'}
 
-    request = urllib2.Request(url, headers=hdrs)
+    request = urllib.Request(url, headers=hdrs)
 
-    page = urllib2.urlopen(request)
+    page = urllib.urlopen(request)
 
     content = page.read()
 
@@ -50,8 +50,10 @@ def get_urls_from_html(html):
 
     return result
 
-crawl('https://www.sheldonbrown.com/')
-print visited_urls
+html='https://www.sheldonbrown.com/'
+
+crawl(html)
+print(visited_urls)
 
 
 
