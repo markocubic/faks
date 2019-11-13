@@ -1,0 +1,7 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
