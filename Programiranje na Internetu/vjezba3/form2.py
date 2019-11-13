@@ -29,10 +29,10 @@ print('''
                 <td>Smjer:</td>
                 <td>
                     <select name="smjer">
-                          <option value="baze">Baze Podataka</option>
-                          <option value="info">Informacijski Sustavi</option>
-                          <option value="lin">Linearna Algebra</option>
-                          <option value="pni">Programiranje na Internetu</option>
+                        <option value="baze">Baze Podataka</option>
+                        <option value="info">Informacijski Sustavi</option>
+                        <option value="lin">Linearna Algebra</option>
+                        <option value="pni">Programiranje na Internetu</option>
                     </select> 
                 </td>
             </tr>
@@ -40,7 +40,7 @@ print('''
                 <td>Zavrsni:</td>
                 <td>
                     
-                    <input type="checkbox" name="zavrsni" value="Da">
+                    <input type="checkbox" name="zavrsni" value="Da ">
                 </td>
             </tr>
             <tr>
