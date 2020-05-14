@@ -1,0 +1,1 @@
+print("base dir path", BASE_DIR)

@@ -1,0 +1,14 @@
+{% extends "users/profile/mentor.html" %}
+
+{% block mentor_content %}
+    <div id="user-menu">
+        <ul>
+            <li><a  class="user-menu-default" href="{%url 'mentor_studenti' %}">Studenti</a></li>
+            <li><a  class="user-menu-selected" href="{%url 'mentor_predmeti' %}">Predmeti</a></li>
+        </ul>
+    </div>
+    <div class="user-list-container">
+        <p>Predmeti text</p>
+    </div>
+    
+{% endblock mentor_content %}

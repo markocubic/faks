@@ -1,0 +1,19 @@
+{% extends "sveuciliste/base.html" %}
+
+{% block register %}
+    <a href="">REGISTER</a>
+{% endblock register %}
+{% block content %}
+    <h1>Register Page</h1>
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                {{ form.as_p }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn" type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

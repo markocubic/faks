@@ -1,0 +1,42 @@
+{% extends "users/profile/mentor.html" %}
+
+{% block mentor_content %}
+{% load static %}
+    <div id="user-menu">
+        <ul>
+            <li><a  class="user-menu-default" href="{%url 'mentor_studenti' %}">Studenti</a></li>
+            <li><a  class="user-menu-selected" href="{%url 'mentor_predmeti' %}">Predmeti</a></li>
+        </ul>
+    </div>
+    <div class="mentor-predmeti-container">
+        <div id="add-subject-container">
+            <a class="user-menu-default" href="{%url 'mentor_predmeti_add' %}">+ Dodaj novi predmet</a>
+        </div>
+        
+        <div class="user-predmeti-list">
+            <form method="POST">
+                {% csrf_token %}
+                <table>
+                {% for predmet in predmeti %}
+                    <tr>
+                        <td><p>{{ predmet.kod }}</p></td>
+                        <td><p>{{ predmet.ime }}</p></td>
+                        <td>
+                            <button type='submit' class='add-btn' name="{{ predmet }}" value='edit'>
+                                <img src="{% static 'images/edit_icon.png' %}" width="11px" height="11px">
+                            </button>
+                        </td>
+                        <td>
+                            <button type='submit' class='add-btn' name="{{ predmet }}" value='delete'>
+                                <img src="{% static 'images/delete_icon.png' %}" width="11px" height="11px">
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </table>
+            </form>
+        </div>
+    </div>
+
+    
+{% endblock mentor_content %}
